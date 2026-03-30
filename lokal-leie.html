@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leie Lokale | Mats &amp; Martin</title>
+    <meta name="description"
+        content="Lei eksklusive selskapslokaler hos Mats &amp; Martin – Ekolito, Brasseriet M&amp;M CC Vest, Chitra House, Villa Lysaker og M1.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ─────────────────────────────────
+           HERO
+        ───────────────────────────────── */
+        .lokale-hero {
+            padding: 11rem 0 6rem;
+            background:
+                linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+                url('https://static.wixstatic.com/media/ae0d27_b4a57c32e3c64a248c24a06c440e0242~mv2.jpg/v1/fill/w_774,h_455,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_4977_2%201.jpg')
+                center / cover no-repeat;
+            text-align: center;
+        }
+        .lokale-hero .page-label {
+            display: block;
+            font-size: .7rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+        }
+        .lokale-hero h1 { font-size: 4.5rem; margin-bottom: 1rem; }
+        .lokale-hero p  {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.85;
+        }
+
+        /* Intro card */
+        .lokale-intro {
+            background: var(--bg-card);
+            border: 1px solid rgba(212,175,55,.2);
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            max-width: 820px;
+            margin: -2.5rem auto 0;
+            position: relative;
+            z-index: 5;
+            text-align: center;
+        }
+        .lokale-intro p { color: var(--text-muted); font-size: .9rem; line-height: 1.9; }
+        .lokale-intro p strong { color: var(--accent); }
+
+        /* ─────────────────────────────────
+           VENUE SECTION  –  two-column grid
+        ───────────────────────────────── */
+        .venue-section {
+            padding: 8rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.05);
+            overflow: hidden; /* clips floating images that drift outside */
+        }
+        .venue-section:last-of-type { border-bottom: none; }
+
+        /*  Grid wrapper inside .container */
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 0 5rem;
+            align-items: start;
+        }
+        /* Reverse: images left, text right */
+        .venue-grid.rev {
+            grid-template-columns: 1fr 360px;
+        }
+        .venue-grid.rev .venue-info    { order: 2; }
+        .venue-grid.rev .venue-cluster { order: 1; }
+
+        /* ─── sticky info panel ─── */
+        .venue-info {
+            position: sticky;
+            top: 100px;
+        }
+        .v-label {
+            display: block;
+            font-size: .65rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .venue-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            line-height: 1.15;
+            margin-bottom: .6rem;
+        }
+        .v-capacity {
+            font-size: .82rem;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 1.8rem;
+            padding-bottom: 1.4rem;
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+        .v-capacity span { color: var(--accent); font-weight: 600; }
+        .v-desc {
+            font-size: .95rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 1.8rem;
+        }
+
+        /* price table */
+        .price-table {
+            background: rgba(255,255,255,.03);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 12px;
+            padding: 1.4rem 1.6rem;
+            margin-bottom: 1.8rem;
+        }
+        .price-table h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: .65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: .6rem 0;
+            border-bottom: 1px solid rgba(255,255,255,.05);
+            gap: .5rem;
+        }
+        .price-row:last-child { border-bottom: none; }
+        .price-row .days   { font-size: .82rem; color: var(--text-main); flex: 1; }
+        .price-row .amount {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            font-size: .98rem;
+            white-space: nowrap;
+        }
+        .v-cta { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; }
+        .btn-ext {
+            color: var(--text-muted);
+            font-size: .75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212,175,55,.4);
+            padding-bottom: 2px;
+            transition: color .3s, border-color .3s;
+        }
+        .btn-ext:hover { color: var(--accent); border-color: var(--accent); }
+
+        /* ─────────────────────────────────
+           IMAGE CLUSTER  –  parallax wraps
+        ───────────────────────────────── */
+        .venue-cluster {
+            /* acts as the scrolling column */
+        }
+
+        /*
+          Each .p-img-wrap is a NORMAL block element.
+          JS translates the WHOLE box on scroll – that's
+          the parallax. Images stay at 100% height inside.
+        */
+        .p-img-wrap {
+            overflow: hidden;
+            border-radius: 18px;
+            box-shadow: 0 25px 60px rgba(0,0,0,.5);
+            will-change: transform;
+            margin-bottom: 1.2rem;
+        }
+        .p-img-wrap:last-child { margin-bottom: 0; }
+
+        .p-img-wrap img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter .4s ease;
+        }
+        .p-img-wrap:hover img { filter: brightness(1.06); }
+
+        /* ── Cluster layout helpers ── */
+
+        /* single full-width image */
+        .cluster-single .p-img-wrap { height: 580px; }
+
+        /* tall + two stacked short */
+        .cluster-duo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            align-items: start;
+        }
+        .cluster-duo .p-img-wrap { margin-bottom: 0; }
+        .cluster-duo .p-img-wrap.img-tall  { height: 580px; }
+        .cluster-duo .p-img-wrap.img-short { height: 276px; }
+        .cluster-duo .duo-col {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        /* trio: 3 stacked, alternating indent */
+        .cluster-trio .p-img-wrap { height: 320px; }
+        .cluster-trio .p-img-wrap:nth-child(2) {
+            margin-left: 10%;
+            width: 90%;
+        }
+
+        /* two images side by side, different heights */
+        .cluster-side {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 1.2rem;
+            align-items: center;
+        }
+        .cluster-side .p-img-wrap { margin-bottom: 0; }
+        .cluster-side .p-img-wrap.img-big   { height: 480px; }
+        .cluster-side .p-img-wrap.img-small { height: 290px; }
+
+        /* Gold divider */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 260px;
+            margin: 0 auto;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+        }
+        .section-divider::before { background: linear-gradient(to right, transparent, var(--accent)); }
+        .section-divider::after  { background: linear-gradient(to left,  transparent, var(--accent)); }
+        .section-divider span { color: var(--accent); font-size: 1.1rem; }
+
+        /* CTA banner */
+        .lokale-cta-banner {
+            background: linear-gradient(135deg, #111 0%, #1a1400 50%, #111 100%);
+            border-top: 1px solid rgba(212,175,55,.2);
+            border-bottom: 1px solid rgba(212,175,55,.2);
+            padding: 7rem 0;
+            text-align: center;
+        }
+        .lokale-cta-banner h2 { font-size: 3rem; margin-bottom: 1rem; }
+        .lokale-cta-banner p  {
+            color: var(--text-muted);
+            max-width: 520px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+        .cta-btns { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+
+        /* ─────────────────────────────────
+           MOBILE  ≤ 900 px
+        ───────────────────────────────── */
+        @media (max-width: 900px) {
+            /* Stack: info then images */
+            .venue-grid,
+            .venue-grid.rev {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .venue-grid .venue-info,
+            .venue-grid.rev .venue-info    { order: 1; }
+            .venue-grid .venue-cluster,
+            .venue-grid.rev .venue-cluster { order: 2; }
+
+            /* no sticky on mobile */
+            .venue-info { position: static; }
+
+            /* disable JS parallax – just show images normally */
+            .p-img-wrap { transform: none !important; }
+
+            /* image heights */
+            .cluster-single .p-img-wrap        { height: 280px; }
+            .cluster-duo                        { grid-template-columns: 1fr; }
+            .cluster-duo .p-img-wrap.img-tall  { height: 260px; }
+            .cluster-duo .p-img-wrap.img-short { height: 220px; }
+            .cluster-trio .p-img-wrap          { height: 220px; width: 100% !important; margin-left: 0 !important; }
+            .cluster-side                       { grid-template-columns: 1fr; }
+            .cluster-side .p-img-wrap.img-big  { height: 250px; }
+            .cluster-side .p-img-wrap.img-small{ display: none; }
+
+            .venue-section { padding: 5rem 0; }
+            .venue-info h2 { font-size: 2rem; }
+
+            /* hero */
+            .lokale-hero { padding: 8rem 0 4rem; }
+            .lokale-hero h1 { font-size: 2.4rem; }
+            .lokale-hero p  { font-size: 1rem; }
+
+            /* intro card – ensure it doesn't hug left edge */
+            .lokale-intro {
+                margin: -2rem 1.5rem 0;
+                padding: 1.6rem 1.5rem;
+            }
+
+            /* buttons */
+            .v-cta { flex-direction: column; }
+            .v-cta .btn { width: 100%; text-align: center; }
+
+            .lokale-cta-banner { padding: 4rem 0; }
+            .lokale-cta-banner h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+
+<body class="dark-theme">
+    <header id="main-header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-mm">MM</div>
+                <div class="logo-text">mats &amp; martin</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="om-oss.html">Om oss</a></li>
+                <li><a href="index.html#services">Tjenester</a></li>
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="restaurant.html">Restaurant</a></li>
+                <li><a href="lokal-leie.html" class="active">Leie Lokale</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn btn-primary" id="book-now">Bestill nå</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ══════ HERO ══════════════════════════════ -->
+        <section class="lokale-hero">
+            <div class="container">
+                <span class="page-label reveal">LOKALLEIE</span>
+                <h1 class="reveal">Eksklusiv <span class="accent">Selskapslokaler</span></h1>
+                <p class="reveal">Vi leier ut unike lokaler til events og private feiringer – og hjelper med å skreddersy meny og oppsett så anledningen blir uforglemmelig.</p>
+            </div>
+        </section>
+
+        <!-- ══════ INTRO CARD ════════════════════════ -->
+        <div class="container">
+            <div class="lokale-intro reveal">
+                <p>Prisene er inkludert mva. Lokalleie inkluderer dekking, duker, servitører og vask.<br>
+                <strong>Minimum kr 500,- per kuvert</strong> (gjelder mat og drikke). Se catering for menyforslag.<br>
+                Avbestilling senest 10 dager før – etter det kreves <strong>75% av antatt totalsum</strong>.<br>
+                Antall kuverter kan justeres frem til kl. 12:00, 4 dager før.</p>
+            </div>
+        </div>
+
+
+        <!-- ══════════════════════════════════════════
+             01 – M&M CC VEST
+        ═══════════════════════════════════════════ -->
+        <section class="venue-section" id="mm-cc-vest">
+            <div class="container">
+                <div class="venue-grid">
+
+                    <!-- LEFT: sticky info -->
+                    <div class="venue-info reveal">
+                        <span class="v-label">Lokale 01</span>
+                        <h2>Brasseriet<br><span class="accent">M&amp;M CC Vest</span></h2>
+                        <p class="v-capacity">Kapasitet: <span>20 – 60 personer</span></p>
+                        <p class="v-desc">Mats og Martin avd. CC Vest kan leies til spesielle og private anledninger. Vi holder bryllup, bursdager, konfirmasjon og dåp – for opp til 60 personer. Om sommeren har vi en stor og lekker terrasse.</p>
+                        <div class="price-table">
+                            <h4>Leiepriser</h4>
+                            <div class="price-row">
+                                <span class="days">Man – Tor (kl. 17–23)</span>
+                                <span class="amount">Kr 6 000,-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="days">Fre – Søn (kl. 17–23 / Søn fra 12)</span>
+                                <span class="amount">Kr 8 000,-</span>
+                            </div>
+                        </div>
+                        <div class="v-cta">
+                            <a href="index.html#contact" class="btn btn-primary">Forespør leie</a>
+                            <a href="https://www.matsogmartin.no/lokalleie" target="_blank" rel="noopener" class="btn btn-outline">Bestill på nett</a>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: parallax image cluster -->
+                    <div class="venue-cluster">
+                        <div class="cluster-single">
+                            <div class="p-img-wrap" data-speed="0.12">
+                                <img src="https://static.wixstatic.com/media/ae0d27_b4a57c32e3c64a248c24a06c440e0242~mv2.jpg/v1/fill/w_774,h_455,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSC_4977_2%201.jpg"
+                                     alt="Brasseriet M&M CC Vest – terrasse om kvelden" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span>✦</span></div>
+
+
+        <!-- ══════════════════════════════════════════
+             02 – EKOLITO
+        ═══════════════════════════════════════════ -->
+        <section class="venue-section" id="ekolito">
+            <div class="container">
+                <div class="venue-grid rev">
+
+                    <!-- LEFT (visually right): images -->
+                    <div class="venue-cluster">
+                        <div class="cluster-trio">
+                            <div class="p-img-wrap" data-speed="0.08">
+                                <img src="https://static.wixstatic.com/media/ae0d27_fd3d665b5db34f5e984b08aee4247908~mv2.webp/v1/fill/w_774,h_516,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ekolito3.webp"
+                                     alt="Ekolito – moderne interiør" loading="lazy">
+                            </div>
+                            <div class="p-img-wrap" data-speed="0.20">
+                                <img src="https://static.wixstatic.com/media/ae0d27_0630aa4d50bd4298981f6643111682c6~mv2.jpg/v1/fill/w_775,h_581,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_8004.jpg"
+                                     alt="Ekolito – tapas buffet" loading="lazy">
+                            </div>
+                            <div class="p-img-wrap" data-speed="0.13">
+                                <img src="https://static.wixstatic.com/media/ae0d27_76e08ab8e53848de85ef842e08a844fc~mv2.webp/v1/fill/w_774,h_516,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ekolito%206.webp"
+                                     alt="Ekolito – uteplass" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT (visually right): sticky info -->
+                    <div class="venue-info reveal">
+                        <span class="v-label">Lokale 02</span>
+                        <h2>Ekolito <span class="accent">Selskapslokaler</span></h2>
+                        <p class="v-capacity">Kapasitet: <span>20 – 110 personer</span></p>
+                        <p class="v-desc">Nytt og lekkert lokale i Mustadveien 1 ved CC Vest. Her kan enhver anledning markeres for 20–110 personer. Vi hjelper til med å skreddersy meny og oppsett. Det er også tilgang til uteplass.</p>
+                        <div class="price-table">
+                            <h4>Leiepriser</h4>
+                            <div class="price-row">
+                                <span class="days">Man – Tor (kl. 14–01)</span>
+                                <span class="amount">Kr 8 000,-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="days">Fre – Søn (kl. 14–01)</span>
+                                <span class="amount">Kr 12 000,-</span>
+                            </div>
+                        </div>
+                        <div class="v-cta">
+                            <a href="index.html#contact" class="btn btn-primary">Forespør leie</a>
+                            <a href="https://www.matsogmartin.no/lokalleie" target="_blank" rel="noopener" class="btn btn-outline">Bestill på nett</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span>✦</span></div>
+
+
+        <!-- ══════════════════════════════════════════
+             03 – CHITRA HOUSE
+        ═══════════════════════════════════════════ -->
+        <section class="venue-section" id="chitra-house">
+            <div class="container">
+                <div class="venue-grid">
+
+                    <div class="venue-info reveal">
+                        <span class="v-label">Lokale 03</span>
+                        <h2>Chitra <span class="accent">House</span></h2>
+                        <p class="v-capacity">Kapasitet: <span>Opp til 300 personer</span></p>
+                        <p class="v-desc">Bærums aller fineste herregård med fantastisk fine lokaler til utleie. Vi leverer mat til alle events hos Chitra. En unik venue med praktfull arkitektur, krystallkranser og elegante utearealer.</p>
+                        <div class="price-table">
+                            <h4>Kontakt for priser</h4>
+                            <div class="price-row">
+                                <span class="days">Rajiv Tiwari</span>
+                                <span class="amount"><a href="mailto:rajiv.tiwari@chitra.no" style="color:var(--accent);text-decoration:none;">rajiv.tiwari@chitra.no</a></span>
+                            </div>
+                        </div>
+                        <div class="v-cta">
+                            <a href="index.html#contact" class="btn btn-primary">Forespør catering</a>
+                            <a href="https://www.chitra.no/" target="_blank" rel="noopener" class="btn-ext">Les mer om Chitra House ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="venue-cluster">
+                        <div class="cluster-duo">
+                            <div class="p-img-wrap img-tall" data-speed="0.10">
+                                <img src="https://static.wixstatic.com/media/ae0d27_c6a9b571ed2c4d32a55c9c6878f6ff4b~mv2.png/v1/fill/w_775,h_494,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Chitra-House-spisesal.png"
+                                     alt="Chitra House spisesal" loading="lazy">
+                            </div>
+                            <div class="duo-col">
+                                <div class="p-img-wrap img-short" data-speed="0.22">
+                                    <img src="https://static.wixstatic.com/media/ae0d27_a376ac157692489da5f04d988589a5f5~mv2.png/v1/fill/w_775,h_479,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Chitra-House-1.png"
+                                         alt="Chitra House eksteriør" loading="lazy">
+                                </div>
+                                <div class="p-img-wrap img-short" data-speed="0.15">
+                                    <img src="https://static.wixstatic.com/media/ae0d27_8d3ad0ae4c4a4664997198c1d968a5f4~mv2.png/v1/fill/w_775,h_436,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Chitra-House.png"
+                                         alt="Chitra House terrasse" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span>✦</span></div>
+
+
+        <!-- ══════════════════════════════════════════
+             04 – VILLA LYSAKER
+        ═══════════════════════════════════════════ -->
+        <section class="venue-section" id="villa-lysaker">
+            <div class="container">
+                <div class="venue-grid rev">
+
+                    <div class="venue-cluster">
+                        <div class="cluster-side">
+                            <div class="p-img-wrap img-big" data-speed="0.12">
+                                <img src="https://static.wixstatic.com/media/ae0d27_f4fa9de922ad4e61a275e29995411e47~mv2.png/v1/fill/w_774,h_516,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Villa-Lysaker-oppdekking.png"
+                                     alt="Villa Lysaker – langbord med krystallkrone" loading="lazy">
+                            </div>
+                            <div class="p-img-wrap img-small" data-speed="0.26">
+                                <img src="https://static.wixstatic.com/media/ae0d27_d6f303350db3409185bd21095c6ba754~mv2.png/v1/fill/w_774,h_533,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Villa%20Lysaker%20-gildehall.png"
+                                     alt="Villa Lysaker – gildehall" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="venue-info reveal">
+                        <span class="v-label">Lokale 04</span>
+                        <h2>Villa <span class="accent">Lysaker</span></h2>
+                        <p class="v-capacity">Kapasitet: <span>Ta kontakt for antall</span></p>
+                        <p class="v-desc">En flott og ærverdig trevilla bygget på slutten av 1800-tallet, sentralt på Lysaker. Vi leverer alt fra møtemat til selskapsmenyer til disse sjarmerende lokalene rett ved Lysaker stasjon.</p>
+                        <div class="price-table">
+                            <h4>Kontakt</h4>
+                            <div class="price-row">
+                                <span class="days">Tonje Stigar</span>
+                                <span class="amount"><a href="mailto:Tonje@stigar.no" style="color:var(--accent);text-decoration:none;">Tonje@stigar.no</a></span>
+                            </div>
+                        </div>
+                        <div class="v-cta">
+                            <a href="index.html#contact" class="btn btn-primary">Forespør catering</a>
+                            <a href="https://www.villalysaker.no/" target="_blank" rel="noopener" class="btn-ext">Les mer om Villa Lysaker ↗</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"><span>✦</span></div>
+
+
+        <!-- ══════════════════════════════════════════
+             05 – M1
+        ═══════════════════════════════════════════ -->
+        <section class="venue-section" id="m1">
+            <div class="container">
+                <div class="venue-grid">
+
+                    <div class="venue-info reveal">
+                        <span class="v-label">Lokale 05</span>
+                        <h2>Selskaps &amp; Møtelokalet <span class="accent">M1</span></h2>
+                        <p class="v-capacity">Kapasitet: <span>10 – 40 personer</span></p>
+                        <p class="v-desc">M1 i Mustadveien 1 ved CC Vest kan leies til møter, konferanser og private anledninger. Et moderne og profesjonelt lokale med alt utstyr for en vellykket samling.</p>
+                        <div class="price-table">
+                            <h4>Leiepriser</h4>
+                            <div class="price-row">
+                                <span class="days">Man – Tor (fra kl. 09)</span>
+                                <span class="amount">Kr 8 000,-</span>
+                            </div>
+                            <div class="price-row">
+                                <span class="days">Fre – Søn (fra kl. 09)</span>
+                                <span class="amount">Kr 6 000,-</span>
+                            </div>
+                        </div>
+                        <div class="v-cta">
+                            <a href="index.html#contact" class="btn btn-primary">Forespør leie</a>
+                            <a href="https://www.matsogmartin.no/lokalleie" target="_blank" rel="noopener" class="btn btn-outline">Bestill på nett</a>
+                        </div>
+                    </div>
+
+                    <div class="venue-cluster">
+                        <div class="cluster-single">
+                            <div class="p-img-wrap" data-speed="0.16">
+                                <img src="https://static.wixstatic.com/media/ae0d27_cd254a66ff4d41c1975f5bbd6f1177f3~mv2.webp/v1/fill/w_774,h_516,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/M%C3%B8terom%20M1.webp"
+                                     alt="Møterom M1 – moderne konferanserom" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ══════ CTA BANNER ════════════════════════ -->
+        <section class="lokale-cta-banner">
+            <div class="container">
+                <h2 class="reveal">Klar til å <span class="accent">planlegge</span> ditt arrangement?</h2>
+                <p class="reveal">Kontakt oss i dag – vi hjelper deg å skreddersy menyen og sette opp lokalet til en uforglemmelig anledning.</p>
+                <div class="cta-btns reveal">
+                    <a href="index.html#contact" class="btn btn-primary">Ta kontakt</a>
+                    <a href="catering.html" class="btn btn-outline">Se vår catering</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-mm">MM</div>
+                    <div class="logo-text">mats &amp; martin</div>
+                </div>
+                <p>Etablert for å skape smakene du husker.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Lenker</h4>
+                <ul>
+                    <li><a href="#">Vilkår</a></li>
+                    <li><a href="#">Personvern</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Følg oss</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/p/Mats-og-Martin-100042385256053/" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/matsogmartin/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mats &amp; Martin. Alle rettigheter reservert.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    /* ══════════════════════════════════════════════════
+       PARALLAX ENGINE
+       Translates the WHOLE .p-img-wrap box (not just
+       the inner image) at a fraction of the scroll speed.
+       Each box has data-speed (0.05–0.30). Boxes with
+       higher speeds drift more, creating staggered depth.
+    ══════════════════════════════════════════════════ */
+    (function () {
+        // Disable on touch/mobile viewports
+        if (window.innerWidth < 900) return;
+
+        var wraps   = Array.from(document.querySelectorAll('.p-img-wrap[data-speed]'));
+        var vh      = window.innerHeight;
+        var ticking = false;
+
+        function update() {
+            wraps.forEach(function (wrap) {
+                var speed = parseFloat(wrap.dataset.speed) || 0.12;
+                var rect  = wrap.getBoundingClientRect();
+
+                /*
+                  Offset of the box's centre from the viewport centre.
+                  When the box is above centre: positive → push it UP.
+                  When below centre: negative → push it DOWN.
+                  Net result: each image "lags" behind scroll at its own rate.
+                */
+                var centreDiff = (rect.top + rect.height / 2) - vh / 2;
+                var shift      = centreDiff * speed * -0.6;
+
+                wrap.style.transform = 'translateY(' + shift.toFixed(2) + 'px)';
+            });
+
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                requestAnimationFrame(update);
+                ticking = true;
+            }
+        }, { passive: true });
+
+        // Initial call so images are positioned correctly on load
+        update();
+
+        // Re-run when window is resized
+        window.addEventListener('resize', function () {
+            vh = window.innerHeight;
+            update();
+        });
+    })();
+
+
+    /* ══════════════════════════════════════════════════
+       SCROLL REVEAL
+    ══════════════════════════════════════════════════ */
+    (function () {
+        var els = document.querySelectorAll('.reveal');
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        els.forEach(function (el) { observer.observe(el); });
+    })();
+    </script>
+</body>
+</html>

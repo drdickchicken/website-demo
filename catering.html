@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meny | Mats & Martin Catering</title>
+    <meta name="description"
+        content="Se våre eksklusive menyer for catering og selskap. Tapas, selskapsmenyer og vegetarvalg.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dark-theme">
+    <header id="main-header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-mm">MM</div>
+                <div class="logo-text">mats &amp; martin</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="om-oss.html">Om oss</a></li>
+                <li><a href="index.html#services">Tjenester</a></li>
+                <li><a href="catering.html" class="active">Catering</a></li>
+                <li><a href="restaurant.html">Restaurant</a></li>
+                <li><a href="lokal-leie.html">Leie Lokale</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn btn-primary">Bestill nå</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="menu-hero">
+            <div class="container text-center">
+                <h1 class="reveal">Vår <span class="accent">Meny</span></h1>
+                <p class="reveal">Utforsk våre nøye sammensatte smaksreiser for enhver anledning.</p>
+            </div>
+        </section>
+
+        <section class="menu-tabs-section">
+            <div class="container">
+                <div class="menu-categories reveal">
+                    <button class="menu-tab-btn active" data-target="tapas">Tapas</button>
+                    <button class="menu-tab-btn" data-target="selskapsmeny">Selskapsmeny</button>
+                    <button class="menu-tab-btn" data-target="vegetar">Vegetar</button>
+                    <button class="menu-tab-btn" data-target="dessert">Dessert</button>
+                </div>
+
+                <div class="menu-content-wrapper">
+                    <!-- Tapas Content -->
+                    <div class="menu-category-content active reveal" id="tapas">
+                        <div class="menu-banner reveal"
+                            style="background-image: url('https://static.wixstatic.com/media/ae0d27_f0645f0513484a2ea9ad8d980f6086b8~mv2.jpg/v1/fill/w_1660,h_500,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tapas%20buffet%20Mats%26Martin.jpg');">
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-card">
+                                <div class="menu-card-header">
+                                    <h3>Tapas Meny 1</h3>
+                                    <span class="price">545,-</span>
+                                </div>
+                                <ul class="menu-items">
+                                    <li>Marinerte scampi med quinoa og avokadosalat</li>
+                                    <li>Laks tataki med søtpotetsalat og chilimajones</li>
+                                    <li>Kokos marinert ceviche med tostados</li>
+                                    <li>Parmaskinke</li>
+                                    <li>Thai kyllingsalat med mango og avokado</li>
+                                    <li>Koreanske kjøttboller med yogurtdressing</li>
+                                    <li>Kylling yakitori spidd</li>
+                                    <li>Oksefilet med ramsløkmajones</li>
+                                    <li>Quiche med spinat og parmesan</li>
+                                    <li>Nystekt focaccia & aioli</li>
+                                </ul>
+                            </div>
+                            <div class="menu-card">
+                                <div class="menu-card-header">
+                                    <h3>Tapas Meny 2</h3>
+                                    <span class="price">645,-</span>
+                                </div>
+                                <ul class="menu-items">
+                                    <li>Skalldyrsalat med kamskjell, scampi og reker</li>
+                                    <li>Kokos marinert ceviche med tostados</li>
+                                    <li>Utvalg av parmaskinke, oliven og artisjokker</li>
+                                    <li>Thai kyllingsalat med mango og avokado</li>
+                                    <li>Kylling yakitori spidd</li>
+                                    <li>Våruller med chili og koriander saus</li>
+                                    <li>Oksefilet med ramsløkmajones</li>
+                                    <li>Andebryst med sesamdressing</li>
+                                    <li>Brisket sliders</li>
+                                    <li>Utvalg av oster</li>
+                                    <li>Nystekt focaccia & aioli</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Selskapsmeny Content -->
+                    <div class="menu-category-content reveal" id="selskapsmeny">
+                        <div class="menu-banner reveal"
+                            style="background-image: url('https://static.wixstatic.com/media/ae0d27_509ebd9f1f2d4e76a7386ad8169297c9~mv2.png/v1/fill/w_1660,h_500,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_0585_HEIC.png');">
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-card">
+                                <div class="menu-card-header">
+                                    <h3>Selskapsmeny 1</h3>
+                                    <span class="price">775,-</span>
+                                </div>
+                                <div class="menu-description">
+                                    <p>Laks tataki med lettsyltett grønnsaksalat og pepperotkrem.</p>
+                                    <div class="divider">***</div>
+                                    <p>Angus indrefilet av okse med pommesanna, brokkolinisalat, karamellisert
+                                        selleripuree og rødvinsaus</p>
+                                    <div class="divider">***</div>
+                                    <p>Mango & pasjonsfruktmousse terte med bær</p>
+                                </div>
+                            </div>
+                            <div class="menu-card">
+                                <div class="menu-card-header">
+                                    <h3>Selskapsmeny 2</h3>
+                                    <span class="price">795,-</span>
+                                </div>
+                                <div class="menu-description">
+                                    <p>Ferske kamskjell, trio blomkål og beurre blanc</p>
+                                    <div class="divider">***</div>
+                                    <p>Langtidsbakt loin av hellefisk med blomkålkrem, brokkolini, pastinakkchips og
+                                        kremet hvitvinssaus med ramsløks olje og lakserogn.</p>
+                                    <div class="divider">***</div>
+                                    <p>Pisket vanilje panna cotta med bær og marengs</p>
+                                </div>
+                            </div>
+                            <div class="menu-card">
+                                <div class="menu-card-header">
+                                    <h3>Selskapsmeny 3</h3>
+                                    <span class="price">945,-</span>
+                                </div>
+                                <div class="menu-description">
+                                    <p>Hardangerørret med Parisersaus</p>
+                                    <div class="divider">***</div>
+                                    <p>Asiatisk hummersuppe med hummerravioli</p>
+                                    <div class="divider">***</div>
+                                    <p>Andebryst fra Holte gård med appelsin og gresskarkrem, glaserte små gulrøtter, og
+                                        appelsin/ingefærsaus</p>
+                                    <div class="divider">***</div>
+                                    <p>Jordbærmousse dome med jordbær</p>
+                                </div>
+                            </div>
+                            <div class="menu-card">
+                                <div class="menu-card-header">
+                                    <h3>Selskapsmeny 4</h3>
+                                    <span class="price">1095,-</span>
+                                </div>
+                                <div class="menu-description">
+                                    <p>Grillet fersk sjøkreps med sjøkrepsravioli, soya og juzureduksjon</p>
+                                    <div class="divider">***</div>
+                                    <p>Indrefilet av reinsdyr med sesongens grønnsaker, pastinakkrem, grønnkål,
+                                        jordskokkchips og skogsbærsjy</p>
+                                    <div class="divider">***</div>
+                                    <p>Utvalg av franske oster med hjemmelaget marmelade</p>
+                                    <div class="divider">***</div>
+                                    <p>Sjokolade panna cotta med marengs og bærkompott</p>
+                                </div>
+                            </div>
+                            <div class="menu-card highlight">
+                                <div class="menu-card-header">
+                                    <h3>Signaturmeny</h3>
+                                    <span class="price">1095,-</span>
+                                </div>
+                                <div class="menu-description">
+                                    <p>Skalldyrsalat med brioche og pasjonsfruktemulsjon</p>
+                                    <div class="divider">***</div>
+                                    <p>45°C laks med svart hvitløk og fennikelpurée og kremet safransaus</p>
+                                    <div class="divider">***</div>
+                                    <p>Filet av kalv med pastinakkrem, grillede minigrønnsaker, potetmilfoy og
+                                        rødvinsreduksjon</p>
+                                    <div class="divider">***</div>
+                                    <p>Utvalg av oster med portvin og rosinkompott</p>
+                                    <div class="divider">***</div>
+                                    <p>Solbærmousse dome med acaibærgele, brent hvit sjokolade og sukkerglass</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vegetar Content -->
+                    <div class="menu-category-content reveal" id="vegetar">
+                        <div class="menu-banner reveal"
+                            style="background-image: url('https://static.wixstatic.com/media/ae0d27_13563f1adfb440588cd5bd643dd24b3f~mv2.jpg/v1/fill/w_1200,h_361,fp_0.45_0.50,q_85,enc_avif,quality_auto/Kylling%20wrap.jpg');">
+                        </div>
+                        <div class="menu-grid">
+                            <div class="menu-card">
+                                <div class="menu-card-header">
+                                    <h3>Vegetarmeny</h3>
+                                    <span class="price">545,-</span>
+                                </div>
+                                <ul class="menu-items">
+                                    <li>Burrata tomat salat</li>
+                                    <li>Griller aubergine med crispy kikerter, pisket feta og youghurt dressing med mynt
+                                        olje</li>
+                                    <li>Quiche med grønnsaker, feta og rød pesto</li>
+                                    <li>Spicy tempura grønnsaker med avokado salat</li>
+                                    <li>Våruller med chili og koriander saus</li>
+                                    <li>Poke vegetar salat</li>
+                                    <li>Nystekt focaccia & aioli</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dessert Content -->
+                    <div class="menu-category-content reveal" id="dessert">
+                        <div class="menu-grid small-grid">
+                            <div class="menu-list-item">
+                                <span>Sjokolademousse terte med jordbær coulies</span>
+                                <span class="dot"></span>
+                                <span>125,-</span>
+                            </div>
+                            <div class="menu-list-item">
+                                <span>Mango og passionsfrukt terte</span>
+                                <span class="dot"></span>
+                                <span>125,-</span>
+                            </div>
+                            <div class="menu-list-item">
+                                <span>Vanilje panna cotta med bær</span>
+                                <span class="dot"></span>
+                                <span>125,-</span>
+                            </div>
+                            <div class="menu-list-item">
+                                <span>Creme Brulee</span>
+                                <span class="dot"></span>
+                                <span>135,-</span>
+                            </div>
+                            <div class="menu-list-item">
+                                <span>Eksklusivt ostefat</span>
+                                <span class="dot"></span>
+                                <span>165,-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-mm">MM</div>
+                    <div class="logo-text">mats &amp; martin</div>
+                </div>
+                <p>Etablert for å skape smakene du husker.</p>
+            </div>
+            <div class="footer-social">
+                <h4>Følg oss</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/p/Mats-og-Martin-100042385256053/" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/matsogmartin/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mats & Martin. Alle rettigheter reservert.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

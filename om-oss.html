@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om oss | Mats & Martin</title>
+    <meta name="description"
+        content="Les mer om Mats & Martin Brasserie. Vi holder til i den nye fløyen på CC Vest. Uformelt brasserie med fokus på sesongens råvarer.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dark-theme">
+    <header id="main-header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-mm">MM</div>
+                <div class="logo-text">mats &amp; martin</div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="om-oss.html" class="active">Om oss</a></li>
+                <li><a href="index.html#services">Tjenester</a></li>
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="restaurant.html">Restaurant</a></li>
+                <li><a href="lokal-leie.html">Leie Lokale</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="index.html#contact" class="btn btn-primary" id="book-now">Bestill nå</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="menu-hero">
+            <div class="container text-center">
+                <h1 class="reveal">Om <span class="accent">Oss</span></h1>
+                <p class="reveal">Velkommen til vårt brasserie på CC Vest</p>
+            </div>
+        </section>
+
+        <section class="about-section" style="padding: 4rem 0 8rem;">
+            <div class="container contact-wrapper">
+                <div class="contact-info reveal">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--accent);">BRASSERIET</h2>
+                    
+                    <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem;">
+                        Mats & Martin er et uformelt brasserie, med hyggelig atmosfære og glade kokker med fokus på sesongens råvarer. Prøv våre spennende salater og høye sandwicher til lunsj, eller dagens 3 retter til middag.
+                    </p>
+
+                    <div class="info-item">
+                        <span class="icon">📍</span>
+                        <span>Vi holder til i den nye fløyen på CC Vest.<br>Lilleakerveien 16, 0283 Oslo</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="icon">📞</span>
+                        <span>Tel: 22 50 83 00</span>
+                    </div>
+
+                    <h3 style="margin-top: 3.5rem; margin-bottom: 1.5rem; color: var(--text-main); font-family: 'Playfair Display', serif; font-size: 1.8rem;">Åpningstider</h3>
+                    <ul class="menu-items" style="margin-bottom: 2rem;">
+                        <li>Mandag – Fredag kl 11:00 - kl 20:00</li>
+                        <li>Lørdag kl 11:00 – kl 18:00</li>
+                        <li>Søndag stengt</li>
+                    </ul>
+
+                    <p style="color: var(--accent); font-style: italic; font-weight: 500;">
+                        Åpent for private selskaper og catering alle dager. <br>(Minimum 10 personer).
+                    </p>
+                </div>
+
+                <!-- Image Rotator -->
+                <div class="about-images reveal">
+                    <div class="img-rotator" id="imgRotator">
+                        <div class="img-rotator__slide active" style="background-image: url('images/info pictures/IMG_7612_HEIC.avif');"></div>
+                        <div class="img-rotator__slide" style="background-image: url('images/info pictures/IMG_7613.avif');"></div>
+                        <div class="img-rotator__slide" style="background-image: url('images/info pictures/IMG_7902_HEIC.avif');"></div>
+                        <div class="img-rotator__slide" style="background-image: url('images/info pictures/Mats-og-Martin-Social-sharing-image.avif');"></div>
+                        <div class="img-rotator__slide" style="background-image: url('images/info pictures/highres-castello-0747.avif');"></div>
+                        <div class="img-rotator__slide" style="background-image: url('images/info pictures/lillamat.avif');"></div>
+                        <div class="img-rotator__dots" id="rotatorDots">
+                            <span class="img-rotator__dot active" data-index="0"></span>
+                            <span class="img-rotator__dot" data-index="1"></span>
+                            <span class="img-rotator__dot" data-index="2"></span>
+                            <span class="img-rotator__dot" data-index="3"></span>
+                            <span class="img-rotator__dot" data-index="4"></span>
+                            <span class="img-rotator__dot" data-index="5"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-mm">MM</div>
+                    <div class="logo-text">mats &amp; martin</div>
+                </div>
+                <p>Etablert for å skape smakene du husker.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Lenker</h4>
+                <ul>
+                    <li><a href="#">Vilkår</a></li>
+                    <li><a href="#">Personvern</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Følg oss</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/p/Mats-og-Martin-100042385256053/" target="_blank" rel="noopener" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/matsogmartin/" target="_blank" rel="noopener" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mats & Martin. Alle rettigheter reservert.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Image Rotator
+        (function () {
+            var slides = document.querySelectorAll('.img-rotator__slide');
+            var dots   = document.querySelectorAll('.img-rotator__dot');
+            var current = 0;
+
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+
+            // Auto-advance every 4 seconds
+            var timer = setInterval(function () { goTo(current + 1); }, 4000);
+
+            // Dot click
+            dots.forEach(function (dot) {
+                dot.addEventListener('click', function () {
+                    clearInterval(timer);
+                    goTo(parseInt(this.dataset.index));
+                    timer = setInterval(function () { goTo(current + 1); }, 4000);
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
